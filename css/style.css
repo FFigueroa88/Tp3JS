@@ -1,0 +1,14 @@
+body{
+    background-color: bisque;
+}
+p{
+    background: skyblue;
+    font-family: "Courier New",monospace;
+}
+table, td{
+    border: 1px solid blue;
+}
+
+td{
+    padding: 10px;
+}
