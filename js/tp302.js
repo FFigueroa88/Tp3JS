@@ -18,39 +18,49 @@ Input:
 
 const ciudades = [];
 
-do{ 
-    ciudades.push(prompt(`Ingrese una ciudad`));
+do {
+  ciudades.push(prompt(`Ingrese una ciudad`));
+} while (
+  confirm(
+    `ACEPTAR: Para continuar cargando ciudades. CANCELAR: Para salir y mostrar por pantalla`
+  )
+);
 
-}while(confirm(`ACEPTAR: Para continuar cargando ciudades. CANCELAR: Para salir y mostrar por pantalla`));
+if (ciudades[0] === null && ciudades[ciudades.length - 1] === null) {
+  document.write(`<p>NO HAY CIUDADES EN EL ARREGLO PARA MOSTRAR.</p>`);
+} else {
+  document.write(
+    `<p>El arreglo de ciudades tiene ${ciudades.length} elementos </p>`
+  );
+  document.write(`<ul>`);
 
-if(ciudades[0] === null && ciudades[ciudades.length - 1]=== null){
+  document.write(`<li>Elemento de la primera posición: ${ciudades[0]}</li>`);
+  if (ciudades[2] !== undefined) {
+    document.write(`<li>Elemento de la tercera posición: ${ciudades[2]}</li>`);
+  } else {
+    document.write(
+      `<li>Elemento de la tercera posición: No hay un elemento en la tercer posición</li>`
+    );
+  }
+  document.write(
+    `<li>Elemento de la ultima posición: ${ciudades[ciudades.length - 1]}</li>`
+  );
+  ciudades.push("París");
+  document.write(
+    `<li>Elemento de la ultima posición: ${
+      ciudades[ciudades.length - 1]
+    } (Luego de agregar Paris en la ultima posición)</li>`
+  );
+  document.write(`</ul>`);
+  document.write(`<p>Arreglo de Ciudades</p>`);
+  document.write(`<ul>`);
+  for (
+    let indiceCiudades = 0;
+    indiceCiudades < ciudades.length;
+    indiceCiudades++
+  ) {
+    document.write(`<li>Elemento: ${ciudades[indiceCiudades]}</li>`);
+  }
 
-    document.write(`<p>NO HAY CIUDADES EN EL ARREGLO PARA MOSTRAR.</p>`);
-
-}
-else{
-     
-    document.write(`<p>El arreglo de ciudades tiene ${ciudades.length} elementos </p>`);
-    document.write(`<ul>`);
-
-    document.write(`<li>Elemento de la primera posición: ${ciudades[0]}</li>`);
-     if(ciudades[2]!== undefined){
-        document.write(`<li>Elemento de la tercera posición: ${ciudades[2]}</li>`);
-     }
-    else{
-        document.write(`<li>Elemento de la tercera posición: No hay un elemento en la tercer posición</li>`);
-    }
-    document.write(`<li>Elemento de la ultima posición: ${ciudades[ciudades.length - 1]}</li>`);
-    ciudades.push("París");
-    document.write(`<li>Elemento de la ultima posición: ${ciudades[ciudades.length - 1]} (Luego de agregar Paris en la ultima posición)</li>`);
-    document.write(`</ul>`);
-    document.write(`<p>Arreglo de Ciudades</p>`);
-    document.write(`<ul>`);
-    for (let indiceCiudades=0;indiceCiudades< ciudades.length; indiceCiudades++){
-    
-        document.write(`<li>Elemento: ${ciudades[indiceCiudades]}</li>`);
-    
-    }
-    
-    document.write(`</ul>`);
+  document.write(`</ul>`);
 }
